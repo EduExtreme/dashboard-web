@@ -2,6 +2,8 @@ import { Building, Edit, Trash2 } from 'lucide-react'
 import { Button } from './button'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
+
 import {
   Card,
   CardHeader,
@@ -51,6 +53,7 @@ export function HouseList() {
       .get('https://imobi-app-api-production.up.railway.app/houses')
       .then((response) => {
         setHouses(response.data)
+        toast.success('Dados carregados com sucesso')
       })
       .catch((error) => {
         console.error('There was an error fetching the houses data!', error)

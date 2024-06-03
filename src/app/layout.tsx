@@ -2,6 +2,7 @@ import { Sidebar } from '@/components/Sidebar.tsx'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="grid min-h-screen grid-cols-app">
           <Sidebar />
+          <Toaster />
           <main className="bg-slate-100 px-8 pb-12 pt-8">{children}</main>
         </div>
       </body>
